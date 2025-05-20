@@ -1,0 +1,6 @@
+@WebMiauMiau_HostAddress = http://localhost:5125
+
+GET {{WebMiauMiau_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
