@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using WebMiauMiau.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<WebMiauMiauContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WebMiauMiauContext") ?? throw new InvalidOperationException("Connection string 'WebMiauMiauContext' not found.")));
 
 // Add services to the container.
 
